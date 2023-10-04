@@ -45,16 +45,16 @@ $ npm run start
 ### Development
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Styled-components](https://img.shields.io/badge/styled-components%20UI-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Styled-components](https://img.shields.io/badge/styledComponents%20UI-DB7093?style=for-the-badge&logo=styledComponents&logoColor=white)
 ![Redux](https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
-![React Query](https://img.shields.io/badge/react-query-FF4154?style=for-the-badge&logo=React-Query&logoColor=white)
+![React Query](https://img.shields.io/badge/reactQuery-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white)
 
 
 <br>
 
 ## 화면 구성 & API 주소
 
-<h2>화면 구성</h2>
+<h3>화면 구성</h3>
 
 |     메인    |     소개    |
 | :--------: | :--------: |
