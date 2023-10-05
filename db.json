@@ -1,0 +1,24 @@
+{
+  "datas": [
+    {
+      "id": 1,
+      "content": "Redux이용해서 상태관리하기",
+      "active": true
+    },
+    {
+      "id": 2,
+      "content": "Redux-Saga 사용해보기",
+      "active": true
+    },
+    {
+      "id": 3,
+      "content": "Redux-Thunk 사용해보기",
+      "active": true
+    },
+    {
+      "id": 4,
+      "content": "블로그 글 정리",
+      "active": true
+    }
+  ]
+}

@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import {
   MainContainer,
   ListContainer,
@@ -8,12 +11,38 @@ import {
 } from './Main.styled';
 import TodoItem from './TodoItem';
 
+export interface TodoDatasType {
+  id: number;
+  content: string;
+  active: boolean;
+}
+
 const Main = () => {
+  const [datas, setDatas] = useState<TodoDatasType[]>([]);
+
+  useEffect(() => {
+    const getDummyDatas = async () => {
+      try {
+        await axios.get('http://localhost:3001/datas').then((res) => {
+          setDatas(res.data);
+          console.log(res);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getDummyDatas();
+  }, []);
+
   return (
     <MainContainer>
       <BigTitle>상태 관리 TodoList</BigTitle>
       <ListContainer>
-        <TodoItem />
+        {datas &&
+          datas.map((data) => {
+            return <TodoItem key={data.id} data={data} />;
+          })}
       </ListContainer>
       <InputContainer>
         <InputForm></InputForm>

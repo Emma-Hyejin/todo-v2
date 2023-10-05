@@ -1,3 +1,4 @@
+import { TodoDatasType } from './Main';
 import {
   ItemContainer,
   TextTodo,
@@ -6,10 +7,11 @@ import {
   DeleteButton,
 } from './TodoItem.styled';
 
-const TodoItem = () => {
+const TodoItem = (props: { data: TodoDatasType }) => {
+  const data = props.data;
   return (
     <ItemContainer>
-      <TextTodo>TEST 입니다.</TextTodo>
+      <TextTodo>{data.content}</TextTodo>
       <StateContainer>
         <Checkbutton>✓</Checkbutton>
         <DeleteButton>x</DeleteButton>
