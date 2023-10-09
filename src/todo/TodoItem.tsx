@@ -1,4 +1,4 @@
-import { addCompletemark, deleteCompletemark } from '../redux/clearSlice';
+import { addCompletTask, deleteCompleteTask } from '../redux/clearSlice';
 import { TodoDatasType } from './Main';
 import {
   ItemContainer,
@@ -22,6 +22,7 @@ const TodoItem = (props: { data: TodoDatasType }) => {
 
   const handleCompleteTask = async () => {
     const changedData = !data.isComplete;
+
     setIsClicked(!isClicked);
     try {
       await axios
@@ -30,12 +31,14 @@ const TodoItem = (props: { data: TodoDatasType }) => {
         })
         .then((res) => {
           console.log(res, '200:OK SEND CHANGE DATA');
+          //true 값이면 완료 Task ++ 1, false 값이면 완료 Task --1,
+          changedData
+            ? dispatch(addCompletTask())
+            : dispatch(deleteCompleteTask());
         });
     } catch (error) {
       console.log(error);
     }
-
-    changedData ? dispatch(addCompletemark()) : dispatch(deleteCompletemark());
   };
 
   return (

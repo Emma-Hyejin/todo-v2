@@ -4,7 +4,7 @@ import { Checkbutton } from './TodoItem.styled';
 
 export const CompleteCtainer = styled.div`
   ${tw`
-  flex flex-col w-6/12 h-[600px] items-center 
+  flex flex-col w-96 h-[600px] items-center 
   mx-auto mt-10 pb-5
   border rounded-lg`}
   background-color: #DFCCFB;
@@ -15,7 +15,7 @@ export const CompleteListContainer = styled.div`
 `;
 
 const CompleteItemContainer = styled.div`
-  ${tw`flex flex-row items-center justify-between w-full py-2 text-base font-bold bg-white border rounded `}
+  ${tw`flex flex-row items-center justify-between w-full px-1 py-1 my-1 text-base font-bold bg-white border rounded-lg `}
 `;
 
 export const CompleteItem = (props: { data: string }) => {
