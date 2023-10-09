@@ -22,7 +22,7 @@ export const BigTitle = styled.div`
 `;
 
 export const ListContainer = styled.div`
-  ${tw`flex flex-col flex-1 w-10/12 py-1 text-base font-semibold `}
+  ${tw`flex flex-col flex-1 w-10/12 py-1 text-base font-semibold border-none `}
 `;
 
 export const InputContainer = styled.form`

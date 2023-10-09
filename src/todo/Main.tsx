@@ -14,7 +14,7 @@ import TodoItem from './TodoItem';
 export interface TodoDatasType {
   id: number;
   content: string;
-  active: boolean;
+  isComplete: boolean;
 }
 
 const Main = () => {
@@ -25,7 +25,7 @@ const Main = () => {
       try {
         await axios.get('http://localhost:3001/datas').then((res) => {
           setDatas(res.data);
-          console.log(res);
+          console.log(res.data);
         });
       } catch (error) {
         console.log(error);
