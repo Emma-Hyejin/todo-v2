@@ -2,11 +2,15 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const ItemContainer = styled.div`
-  ${tw`flex flex-row items-center justify-between w-full py-2 text-base font-semibold border rounded-lg //`}
+  ${tw`flex flex-row items-center justify-between w-full py-2 text-base font-semibold`}
 `;
 
 export const TextTodo = styled.div`
   ${tw`w-8/12 px-2 py-2 bg-white border rounded-lg`}
+
+  &.completeTask {
+    ${tw`italic text-gray-500 line-through`}
+  }
 `;
 
 export const StateContainer = styled.form`

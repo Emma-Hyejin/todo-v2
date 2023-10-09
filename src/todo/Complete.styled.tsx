@@ -11,7 +11,7 @@ export const CompleteCtainer = styled.div`
 `;
 
 export const CompleteListContainer = styled.div`
-  ${tw`flex flex-col flex-1 w-10/12 py-1 text-base font-semibold bg-pink-300 `}
+  ${tw`flex flex-col flex-1 w-10/12 py-1 text-base font-light text-gray-500 `}
 `;
 
 const CompleteItemContainer = styled.div`
@@ -26,3 +26,8 @@ export const CompleteItem = (props: { data: string }) => {
     </CompleteItemContainer>
   );
 };
+
+//noData
+export const ImgContainer = styled.img`
+  ${tw`m-auto `}
+`;
