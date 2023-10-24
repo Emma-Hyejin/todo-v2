@@ -1,4 +1,8 @@
-import { addCompletTask, deleteCompleteTask } from '../redux/clearSlice';
+import {
+  addCompletTask,
+  completedCount,
+  deleteCompleteTask,
+} from '../redux/clearSlice';
 import { TodoDatasType } from './Main';
 import {
   ItemContainer,
@@ -8,7 +12,7 @@ import {
   DeleteButton,
 } from './TodoItem.styled';
 //redux
-import { useAppDispatch } from '../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -24,6 +28,12 @@ const TodoItem = (props: { data: TodoDatasType }) => {
     const changedData = !data.isComplete;
 
     setIsClicked(!isClicked);
+    if (changedData) {
+      dispatch(addCompletTask());
+    } else {
+      dispatch(deleteCompleteTask());
+    }
+    // changedData ? dispatch(addCompletTask()) : dispatch(deleteCompleteTask());
     try {
       await axios
         .patch(`http://localhost:3001/datas/${data.id}`, {
@@ -32,9 +42,6 @@ const TodoItem = (props: { data: TodoDatasType }) => {
         .then((res) => {
           console.log(res, '200:OK SEND CHANGE DATA');
           //true 값이면 완료 Task ++ 1, false 값이면 완료 Task --1,
-          changedData
-            ? dispatch(addCompletTask())
-            : dispatch(deleteCompleteTask());
         });
     } catch (error) {
       console.log(error);
