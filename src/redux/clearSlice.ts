@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 interface ClearState {
-  isComplete: boolean;
+  completeTask: number;
 }
 
 const initialState: ClearState = {
-  isComplete: false,
+  completeTask: 0,
 };
 
 export const clearSlice = createSlice({
@@ -16,16 +16,16 @@ export const clearSlice = createSlice({
   //   },
   initialState,
   reducers: {
-    addBookmark: (state) => {
-      state.isComplete = true;
+    addCompletTask: (state) => {
+      state.completeTask += 1;
     },
-    deleteBookmark: (state) => {
-      state.isComplete = false;
+    deleteCompleteTask: (state) => {
+      state.completeTask -= 1;
     },
   },
 });
 
-export const { addBookmark, deleteBookmark } = clearSlice.actions;
+export const { addCompletTask, deleteCompleteTask } = clearSlice.actions;
 // export default counterSlice.reducer;
-export const selectCount = (state: RootState) => state.complete.isComplete;
+export const completedCount = (state: RootState) => state.complete.completeTask;
 export default clearSlice.reducer;
